@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            position: relative;
+            background: url(gro.jpg);
+            background-size: cover;
+            background-position: center bottom;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:hover {
+            background-color:#FEA948 ;
+        }
+
+        input[type="text"]:hover.amount-text {
+            background-color: #85bb65;
+        }
+
+        input[type="text"]:hover.tomato-text {
+            background-color: #FF6347;
+        }
+
+        input[type="text"]:hover.onion-text {
+            background-color: #894452;
+        }
+
+        input[type="text"]:hover.potato-text {
+            background-color: #EFEAB5 ;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        #container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #header {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #808080;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 35px;
+            text-transform: uppercase;
+        }
+
+        #header img {
+            max-width: 110px;
+            height: auto;
+        }
+
+        #header:hover img {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <img src="file:///C:/web%20technology/project/R.png">
+            <br>
+            <center> GROCERY CALCULATOR
+        </div>
+        Enter Amount: <br>
+        <input type="text" class="amount-text" id="Text1"><br>
+        Enter Tomato: <br>
+        <input type="text" class="tomato-text" id="Text2"><br>
+        Enter Onion: <br>
+        <input type="text" class="onion-text" id="Text3"><br>
+        Enter Potato: <br>
+        <input type="text" class="potato-text" id="Text4"><br>
+        Balance: <br>
+        <input type="text" id="txtbalance"><br>
+        <center><input type="button" value="Display Balance" onclick="grocerycalculator()">
+        <script>
+            function grocerycalculator() {
+                var Amount = parseInt(document.getElementById("Text1").value);
+                var Tomato = parseInt(document.getElementById("Text2").value);
+                var Onion = parseInt(document.getElementById("Text3").value);
+                var Potato = parseInt(document.getElementById("Text4").value);
+                var balance = Amount - (Tomato + Onion + Potato);
+                document.getElementById("txtbalance").value = balance;
+            }
+        </script>
+    </div>
+</body>
+
+</html>
